@@ -85,10 +85,10 @@
  
      <script>
          function Init() {
-             /* Paso 0
+             
              var diasSemana = ["Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge"];
              var colorDia = ['#e26131', '#d0d378', '#78d3b0', '#78bcd3', '#9e78d3', '#d378cd', '#d37878'];
-             */
+            
             mapboxgl.accessToken =
             "https://api.mapbox.com/styles/v1/guillemtc/cjrjk07ns2nt62sqhp658u2vo.html?fresh=true&title=true&access_token=pk.eyJ1IjoiZ3VpbGxlbXRjIiwiYSI6ImNqcmpqdzFhNjBjYXozeWxsM3FkMHNvcHcifQ.BwlSLq6XwdTAiJKUoRQcfQ#12.6/41.404280/2.194895/0";
                  var map = new mapboxgl.Map({
@@ -102,9 +102,9 @@
                  });
              map.addControl(new mapboxgl.AttributionControl({compact: true}));
              map.addControl(new mapboxgl.NavigationControl());
-             /* Paso 1
+            
              creaLeyenda();
-             */           
+                 
              map.on('load', function () {
                  map.addSource("accidentes_source", {
                      type: "vector",
@@ -116,7 +116,7 @@
                      type: "circle",
                      source: "accidentes_source",
                      'source-layer': "accidents-4w0utv",
-                     /* pas0 1
+                   
            paint: {
        'circle-radius': 4,
        'circle-color': {
@@ -134,12 +134,10 @@
        },
        'circle-opacity': 0.8
      }
-     */
-                     /* Paso 2
+     
                      ,filter:['==', 'Descripcio_dia_setmana', diasSemana[0]]
-                     */
- 
-                 }); //fin add layers
+                    
+                 }); //fin load
  
  
                  /* Paso 2
